@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(100, 170, 197))
+}
+
+
+.card {
+    width: 350px;
+    margin: 40px auto;
+    background: rgb(49, 41, 41);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+}
+
+.details {
+    padding: 20px;
+    color: white;
+}
+
+.tag {
+    background: black;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.colors {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.color {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.red {
+    background: red;
+}
+
+.black {
+    background: black;
+}
+
+.white {
+    background: white;
+}
+
+.active {
+    outline: 3px solid yellow;
+}
+
+.price {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    background: red
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: rgb(175, 41, 41);
+}

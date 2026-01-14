@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: blue;
+}
+
+.todo-input {
+    padding: 10px;
+    width: 70%;
+}
+
+.add-button {
+    padding: 10px 20px;
+    color: green;
+}
+</style>
+</head>
+
+<body>
+
+<h1 style="color: red;">To-Do List</h1>
+
+<input type="text" id="todo-input" class="todo-input" placeholder="Add a new task">
+<button id="add-button" class="add-button">Add Task</button>
+
+<ul id="todo-list"></ul>
+
+<script>
+/* JavaScript for To-Do List */
+
+const todoInput = document.getElementById('todo-input');
+const addButton = document.getElementById('add-button');
+const todoList = document.getElementById('todo-list');
+
+addButton.addEventListener('click', () => {
+    const task = todoInput.value.trim();
+
+    if (task !== "") {
+        const listItem = document.createElement('li');
+
+        listItem.innerHTML = `
+            ${task}
+            <button class="delete-button">Delete</button>
+        `;
+
+        todoList.appendChild(listItem);
+
+        // Delete functionality
+        const deleteButton = listItem.querySelector('.delete-button');
+        deleteButton.addEventListener('click', () => {
+            todoList.removeChild(listItem);
+        });
+
+        // Clear input
+        todoInput.value = "";
+    }
+});
+</script>
+
+</body>
+</html>
